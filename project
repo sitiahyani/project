@@ -1,0 +1,72 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Color(0xffed8869),
+          title: Center(
+            child: Text(
+              "Project Uji Coba",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          leading: IconButton(
+            icon: Icon(Icons.home),
+            onPressed: () {
+              // IconButton
+            },
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {
+                // Tambahkan fungsi untuk pencarian di sini
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                // Tambahkan fungsi untuk pengaturan di sini
+              },
+            ),
+          ],
+        ),
+        body: ListView.builder(
+          itemCount: 25,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+              ),
+              child: ListTile(
+                leading: Image.network(
+                  "https://upload.wikimedia.org/wikipedia/commons/4/41/Sunflower_from_Silesia2.jpg",
+                ),
+                title: Text(
+                  "Bunga Matahari",
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+                subtitle: Text(
+                  'Bunga matahari (Helianthus annuus) adalah tumbuhan berbunga yang terkenal dengan bunga besar dan cerah yang menyerupai matahari. Ini adalah tumbuhan yang berasal dari Amerika Utara dan telah dibudidayakan di seluruh dunia. Berikut beberapa ciri-ciri umum bunga matahari:.',
+                  maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
